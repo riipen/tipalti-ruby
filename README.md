@@ -81,10 +81,10 @@ Any error code returned by the Tipalti API will result in one of the following e
 |403| Tipalti::Forbidden|
 |404| Tipalti::NotFound|
 |429| Tipalti::TooManyRequests|
-|400| Tipalti::then ClientError|
+|400| Tipalti::ClientError|
 |500| Tipalti::InternalServerError|
 |503| Tipalti::ServiceUnavailable|
-|500| Tipalti::then ServerError|
+|500| Tipalti::ServerError|
 
 ## License
 
