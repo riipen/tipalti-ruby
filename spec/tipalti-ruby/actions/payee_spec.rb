@@ -20,6 +20,16 @@ RSpec.describe Tipalti::Actions::Payee do
     end
   end
 
+  describe "#payee_get" do
+    it "issues the correct request with id" do
+      stub = stub_request(:get, "#{@client.base_url}/api/v1/payees/1")
+
+      @client.payee_get("1")
+
+      expect(stub).to have_been_requested
+    end
+  end
+
   describe "#payee_list" do
     it "issues the correct request with params" do
       stub = stub_request(:get, "#{@client.base_url}/api/v1/payees").with(query: { filter: 'refCode=="123"' })

@@ -53,6 +53,12 @@ For use of each endpoint and available attributes or filtering criteria, please 
 
 Example: `client.payee_create(refCode: '123abc')`
 
+#### Payees get
+
+[API docs](https://documentation.tipalti.com/reference/get_api-v1-payees-id)
+
+Example: `client.payee_get('123abc')`
+
 #### Payees list
 
 [API docs](https://documentation.tipalti.com/reference/get_api-v1-payees)
