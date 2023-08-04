@@ -1,3 +1,4 @@
+[![Gem Version](https://badge.fury.io/rb/tipalti-ruby.svg)](https://badge.fury.io/rb/tipalti-ruby)
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/riipen/tipalti-ruby/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/riipen/tipalti-ruby/tree/main)
 
 # Tiplaty Ruby
