@@ -65,6 +65,36 @@ Example: `client.payee_get('123abc')`
 
 Example: `client.payee_list(filter: 'status=="ACTIVE"')`
 
+#### Payment batches create
+
+[API docs](https://documentation.tipalti.com/reference/post_api-v1-payment-batches)
+
+Example:
+
+```ruby
+client.payment_batch_create({ 
+                              paymentInstructions: [
+                                { 
+                                  payeeId: '123456', 
+                                  amountSubmitted: { amount: 5, currency: 'USD' }, 
+                                  refCode: '123ref' 
+                                }
+                              ] 
+                            })
+```
+
+#### Payment batches instructions get
+
+[API docs](https://documentation.tipalti.com/reference/get_api-v1-payment-batches-id-instructions)
+
+Example: `client.payment_batch_instructions_get('3456789')`
+
+#### Payments get
+
+[API docs](https://documentation.tipalti.com/reference/get_api-v1-payments-id)
+
+Example: `client.payment_get('123abc')`
+
 ### Token Management
 
 #### Refresh
