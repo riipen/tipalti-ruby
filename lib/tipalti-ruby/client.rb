@@ -3,6 +3,8 @@
 module Tipalti
   class Client
     include Tipalti::Actions::Payee
+    include Tipalti::Actions::Payment
+    include Tipalti::Actions::PaymentBatch
     include Tipalti::Actions::Token
 
     BASE_URL_P  = "https://api-p.tipalti.com"
