@@ -1,3 +1,9 @@
+## v0.3.0
+
+- Added payment get endpoint
+- Added payment batch create endpoint
+- Added payment batch instructions get endpoint
+
 ## v0.2.0
 
 - Added payees get endpoint
