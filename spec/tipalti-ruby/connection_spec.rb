@@ -93,4 +93,14 @@ RSpec.describe Tipalti::Connection do
       expect(stub).to have_been_requested
     end
   end
+
+  describe "#request" do
+    it "issues the correct request" do
+      stub = stub_request(:post, "https://foo.com/bar")
+
+      @connection.request(:post, "/bar", {})
+
+      expect(stub).to have_been_requested
+    end
+  end
 end

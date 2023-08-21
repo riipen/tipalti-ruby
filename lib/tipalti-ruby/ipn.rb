@@ -21,7 +21,7 @@ module Tipalti
     end
 
     def verify
-      connection.post("/notif/ipn.aspx", **@payload)
+      connection.request(:post, "/notif/ipn.aspx", @payload)
     end
   end
 end

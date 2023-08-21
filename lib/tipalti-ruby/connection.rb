@@ -31,8 +31,6 @@ module Tipalti
       request(:put, path, params)
     end
 
-    private
-
     def request(method, path, params)
       response = connection.public_send(method, path, params) do |request|
         request.headers["accept"] = "application/json"
@@ -45,6 +43,8 @@ module Tipalti
 
       response.body
     end
+
+    private
 
     def connection
       @connection ||= Faraday.new(url: @url) do |c|
