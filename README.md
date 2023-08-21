@@ -134,7 +134,7 @@ To manage IPNs you will need to instantiate a IPN instance like so.
 
 ```ruby
 ipn = Tipalti::Ipn.new(
-  payload: {}, # The payload received to your server from the Tipalti IPN
+  payload: '...', # The raw payload received to your server from the Tipalti IPN
 )
 ```
 
