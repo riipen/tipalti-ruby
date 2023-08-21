@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ["me@jordanell.com"]
 
   spec.summary = "An API client for Tipalti in ruby."
-  spec.description = "An API client for Tipalti in ruby."
+  spec.description = "Access the Tipalti REST API via OAuth2."
   spec.homepage = "https://github.com/riipen/tipalti-ruby"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"

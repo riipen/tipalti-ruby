@@ -1,3 +1,7 @@
+## v0.4.0
+
+- Added IPN verification
+
 ## v0.3.0
 
 - Added payment get endpoint
