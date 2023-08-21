@@ -18,6 +18,8 @@ Then `bundle install`.
 
 ## Usage
 
+### API Client
+
 The Tipalti API uses OAuth to authenticate API requests. 
 
 First you need ot get an access code externally by following the [Tipalti authorization flow](https://documentation.tipalti.com/docs/authorization-flow).
@@ -43,7 +45,7 @@ client = Tipalti::Client.new(
 )
 ```
 
-### Endpoints
+### API Endpoints
 
 For use of each endpoint and available attributes or filtering criteria, please consult the [Tipalti API reference](https://documentation.tipalti.com/reference/introduction).
 
@@ -93,6 +95,7 @@ Example: `client.payment_batch_instructions_get('3456789')`
 
 [API docs](https://documentation.tipalti.com/reference/get_api-v1-payments-id)
 
+
 Example: `client.payment_get('123abc')`
 
 ### Token Management
@@ -122,6 +125,33 @@ Any error code returned by the Tipalti API will result in one of the following e
 |500| Tipalti::InternalServerError|
 |503| Tipalti::ServiceUnavailable|
 |500| Tipalti::ServerError|
+
+### IPNs
+
+Tiplati uses an IPN (instance payment notification) messaging service that enables you to receive notifications from Tipalti. Notifications are triggered when defined events occur (e.g., changes in payee details, system events and payment statuses).
+
+To manage IPNs you will need to instantiate a IPN instance like so.
+
+```ruby
+ipn = Tipalti::Ipn.new(
+  payload: '...', # The raw payload received to your server from the Tipalti IPN
+)
+```
+
+You can use the Tipalti sandbox by setting `ipn.sanbox = true` or as part of the initialization
+
+```ruby
+ipn = Tipalti::Ipn.new(
+  ...
+  sandbox: true
+)
+```
+
+#### Verify
+
+[API docs](https://support.tipalti.com/Content/Topics/Development/IPNs/ipnprotocol.htm#AcknowledgeAndVerifyIPN)
+
+Example: `ipn.verify`
 
 ## License
 
