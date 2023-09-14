@@ -18,13 +18,8 @@ RSpec.describe Tipalti::Actions::Token do
   # Instance Methods
   describe "#token_refresh" do
     it "issues the correct request" do
-      stub = stub_request(:post, "#{@client.token_url}/connect/token").with(body: {
-                                                                              client_id: "id",
-                                                                              client_secret: "secret",
-                                                                              grant_type: "refresh_token",
-                                                                              refresh_token: "refresh_token",
-                                                                              code_verifier: "code_verifier"
-                                                                            })
+      stub = stub_request(:post, "#{@client.token_url}/connect/token")
+             .with(body: "client_id=id&client_secret=secret&grant_type=refresh_token&refresh_token=refresh_token&code_verifier=code_verifier")
 
       @client.token_refresh
 
