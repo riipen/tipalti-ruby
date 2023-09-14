@@ -82,6 +82,16 @@ RSpec.describe Tipalti::Connection do
 
       expect(stub).to have_been_requested
     end
+
+    it "issues a post request with form encoded body" do
+      stub = stub_request(:post, "https://foo.com/bar").with(headers: {
+                                                               "Content-Type" => "application/x-www-form-urlencoded"
+                                                             }, body: "foo=bar")
+
+      @connection.post("/bar", { foo: "bar" }, { body: :form })
+
+      expect(stub).to have_been_requested
+    end
   end
 
   describe "#put" do

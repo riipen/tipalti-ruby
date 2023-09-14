@@ -23,18 +23,23 @@ module Tipalti
       request(:head, path, params)
     end
 
-    def post(path, **params)
-      request(:post, path, params)
+    def post(path, params = {}, options = {})
+      request(:post, path, params, options)
     end
 
     def put(path, **params)
       request(:put, path, params)
     end
 
-    def request(method, path, params)
+    def request(method, path, params, options = {}) # rubocop:disable Metrics/MethodLength
       response = connection.public_send(method, path, params) do |request|
         request.headers["accept"] = "application/json"
         request.headers["authorization"] = "Bearer #{@access_token}" if @access_token
+
+        if options[:body] == :form
+          request.headers["Content-Type"] = "application/x-www-form-urlencoded"
+          request.body = URI.encode_www_form(params)
+        end
       end
 
       error = Error.from_response(response)

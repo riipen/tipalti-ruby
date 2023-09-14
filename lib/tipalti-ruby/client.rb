@@ -32,7 +32,7 @@ module Tipalti
     end
 
     def connection_token
-      Connection.new(access_token: @access_token, url: token_url)
+      Connection.new(url: token_url)
     end
 
     def token_url
