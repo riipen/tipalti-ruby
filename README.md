@@ -31,7 +31,7 @@ client = Tipalti::Client.new(
   client_id: 'client_id', # Tipalti developer app client id
   client_secret: 'client_secret', # Tipalti developer app client id
   access_token: 'access_token', # Access token from authorization flow
-  refresh_token: 'refresh_token', # Frefresh token from authorization flow
+  refresh_token: 'refresh_token', # Refresh token from authorization flow
   code_verifier: 'secret', # Code verifier from authorization flow
 )
 ```

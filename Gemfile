@@ -2,7 +2,9 @@
 
 source "https://rubygems.org"
 
-gem "faraday", "~> 1.0", ">= 1.0.0"
+gemspec
+
+gem "faraday", "~> 2.0"
 gem "oauth2", "~> 2.0"
 
 group :development, :test do
