@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 gemspec
 
-gem "faraday", "~> 2.0"
+gem "faraday", ">= 2.0.1"
 gem "oauth2", "~> 2.0"
 
 group :development, :test do
