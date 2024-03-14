@@ -53,10 +53,10 @@ module Tipalti
 
     def connection
       @connection ||= Faraday.new(url: @url) do |c|
+        c.adapter :net_http
         c.request :json, content_type: /\bjson$/
         c.response :json, content_type: /\bjson$/
         c.request :url_encoded, content_type: /x-www-form-urlencoded/
-        c.adapter Faraday.default_adapter
       end
     end
   end

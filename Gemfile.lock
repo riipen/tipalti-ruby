@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tipalti-ruby (0.5.1)
+    tipalti-ruby (0.5.2)
       faraday (~> 2.0)
       oauth2 (~> 2.0)
 
