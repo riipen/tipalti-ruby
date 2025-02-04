@@ -6,8 +6,9 @@ module Tipalti
   class Connection
     attr_accessor :access_token, :url
 
-    def initialize(url:, access_token: nil)
+    def initialize(url:, access_token: nil, timeout: 60)
       @access_token = access_token
+      @timeout      = timeout
       @url          = url
     end
 
@@ -56,6 +57,7 @@ module Tipalti
         c.request :json, content_type: /\bjson$/
         c.response :json, content_type: /\bjson$/
         c.request :url_encoded, content_type: /x-www-form-urlencoded/
+        c.options.timeout = @timeout
         c.adapter Faraday.default_adapter
       end
     end

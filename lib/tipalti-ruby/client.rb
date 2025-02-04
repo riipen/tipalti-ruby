@@ -14,13 +14,14 @@ module Tipalti
 
     attr_accessor :sandbox
 
-    def initialize(client_id:, client_secret:, access_token:, refresh_token: nil, code_verifier: nil, sandbox: false) # rubocop:disable Metrics/ParameterLists
+    def initialize(client_id:, client_secret:, access_token:, refresh_token: nil, code_verifier: nil, sandbox: false, timeout: 60) # rubocop:disable Metrics/ParameterLists
       @client_id      = client_id
       @client_secret  = client_secret
       @access_token   = access_token
       @refresh_token  = refresh_token
       @code_verifier  = code_verifier
       @sandbox        = sandbox
+      @timeout        = timeout
     end
 
     def base_url
@@ -28,11 +29,11 @@ module Tipalti
     end
 
     def connection
-      Connection.new(access_token: @access_token, url: base_url)
+      Connection.new(access_token: @access_token, url: base_url, timeout: @timeout)
     end
 
     def connection_token
-      Connection.new(url: token_url)
+      Connection.new(url: token_url, timeout: @timeout)
     end
 
     def token_url
