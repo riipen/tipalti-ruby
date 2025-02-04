@@ -33,6 +33,7 @@ client = Tipalti::Client.new(
   access_token: 'access_token', # Access token from authorization flow
   refresh_token: 'refresh_token', # Refresh token from authorization flow
   code_verifier: 'secret', # Code verifier from authorization flow
+  timeout: 30, # Optional setting for timeouts of all requests (default 60)
 )
 ```
 
