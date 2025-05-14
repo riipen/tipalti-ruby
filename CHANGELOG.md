@@ -1,3 +1,8 @@
+## v0.6.1
+
+- Upgraded `rack` dependency
+- Upgraded `rexml` dependency
+
 ## v0.4.0
 
 - Added IPN verification
